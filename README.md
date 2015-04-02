@@ -7,4 +7,5 @@ This is my common vimrc for development.
 * Bundle
 
     git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
     BundleInstall
