@@ -15,7 +15,15 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'slim-template/vim-slim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'mileszs/ack.vim'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'jwhitley/vim-matchit'
 Bundle 'Lokaltog/powerline'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 
 " 设置字体
 set guifont=Monaco:h12
@@ -78,11 +86,12 @@ let NERDTreeWinSize=40
 nmap <C-N> :exe 'NERDTreeToggle'<CR>
 map zz :set paste<CR>
 map zx :set nopaste<CR>
-nmap ls :ls<CR>
+nmap sl :ls<CR>
 nmap nn :bn<CR>
 nmap mm :bp<CR>
 nmap gb :e#<CR>
 imap jj <ESC>
+vmap ff <ESC>
 
 let c = 1
 while c <= 99
@@ -95,5 +104,17 @@ while d <= 99
   let d += 1
 endwhile
 
+
 set laststatus=2
 set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+
+" CtrlP
+let g:ctrlp_map = ',,'
+let g:ctrlp_open_multiple_files = 'v'
+let g:ctrlp_by_filename = 1
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git)$',
+  \ 'file': '\v\.(log|jpg|png|jpeg)$',
+  \ }
